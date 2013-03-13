@@ -43,8 +43,8 @@ iptables -A INPUT -p icmp --icmp-type echo-reply -j ACCEPT
 iptables -A INPUT -i lo -j ACCEPT
 iptables -A OUTPUT -o lo -j ACCEPT
 
-# Simple DoS prevention - limit 25 connections/min after 100 connections have been made
-iptables -A INPUT -p tcp --dport 80 -m limit --limit 60/minute --limit-burst 100 -j ACCEPT
+# Simple DoS prevention - limit 30 connections/min after 100 connections have been made
+iptables -A INPUT -p tcp --dport 80 -m limit --limit 30/minute --limit-burst 100 -j ACCEPT
 
 # Now set default policy to drop all other Input.
 # This is deliberately not executed above so that the script can be excuted remotely.
