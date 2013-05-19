@@ -1,0 +1,2 @@
+s/-ldl  *//
+s/-lpthread  *//
